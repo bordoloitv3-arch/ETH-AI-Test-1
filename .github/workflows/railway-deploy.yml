@@ -1,0 +1,36 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Login to Railway
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: |
+          echo "$RAILWAY_API_TOKEN" > /tmp/railway_token
+          # railway login supports --apiKey in newer versions; fallback to env
+          railway login --apiKey "$RAILWAY_API_TOKEN" || true
+
+      - name: Deploy
+        env:
+          RAILWAY_PROJECT: ${{ secrets.RAILWAY_PROJECT }}
+          RAILWAY_SERVICE: ${{ secrets.RAILWAY_SERVICE }}
+        run: |
+          # Deploy the current branch to the specified Railway project and service
+          railway up --project "$RAILWAY_PROJECT" --service "$RAILWAY_SERVICE" --yes
