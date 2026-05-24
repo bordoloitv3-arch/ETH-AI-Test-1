@@ -88,7 +88,13 @@ def create_app() -> FastAPI:
         request: Request,
         x_webhook_token: Optional[str] = Depends(validate_token),
     ) -> JSONResponse:
-        if coordinator.secret_token and x_webhook_token != coordinator.secret_token:
+        # Allow token via header `x-webhook-token`, query param `token`, or JSON field `token`/`webhook_token`
+        payload_dict = payload.dict() if hasattr(payload, "dict") else {}
+        token_from_payload = payload_dict.get("token") or payload_dict.get("webhook_token") or (payload.metadata.get("token") if getattr(payload, "metadata", None) else None)
+        token_from_query = request.query_params.get("token")
+        effective_token = x_webhook_token or token_from_payload or token_from_query
+
+        if coordinator.secret_token and effective_token != coordinator.secret_token:
             logger.warning("Webhook authentication failed for request from %s", request.client.host if request.client else "unknown")
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid webhook token")
 

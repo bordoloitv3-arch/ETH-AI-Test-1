@@ -101,6 +101,12 @@ class WorkflowManager:
 
         history = result.get("history") or []
         best_params = result.get("parameters") or {}
+        strategy_version_path = None
+        if self.pine_strategy is not None:
+            try:
+                strategy_version_path = self.pine_strategy.save_version(best_params, prefix=result.get("report_prefix"))
+            except Exception:
+                strategy_version_path = None
         # Begin with rejected entries from history
         rejected_parameters: List[Dict[str, Any]] = []
         for entry in history:
@@ -549,7 +555,7 @@ class WorkflowManager:
         average_score = float(np.mean([entry["score"] for entry in window_results]))
         return {"score": average_score, "window_results": window_results}
 
-    def evaluate_candidate(self, price_data: Union[pd.Series, pd.DataFrame] = None, *, price_series: Union[pd.Series, pd.DataFrame] = None, params: Dict[str, Any] = None) -> Dict[str, Any]:
+    def evaluate_candidate(self, price_data: Union[pd.Series, pd.DataFrame] = None, params: Dict[str, Any] = None, price_series: Union[pd.Series, pd.DataFrame] = None) -> Dict[str, Any]:
         if price_series is not None:
             price_data = price_series
         if price_data is None or params is None:
