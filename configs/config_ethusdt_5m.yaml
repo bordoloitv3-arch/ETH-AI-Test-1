@@ -1,0 +1,92 @@
+logging:
+  level: INFO
+  path: logs/optimizer_ethusdt_5m.log
+
+backtest:
+  initial_balance: 100000
+  leverage: 10
+  fee_rate: 0.00075
+  slippage_pct: 0.0005
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.04
+  max_trades: 50
+  sample_length: 252
+
+optimizer:
+  engine: optuna
+  trials: 30
+  seed: 42
+  sampler: tpe
+  jobs: 2
+  objective: combined
+  use_validation_in_objective: true
+  monte_carlo:
+    enabled: true
+    simulations: 30
+  walk_forward:
+    enabled: true
+    windows: 3
+    train_pct: 0.6
+    test_pct: 0.4
+  search_space:
+    maxDist:
+      - 20.0
+      - 37.0
+      - 50.0
+    tpPoints:
+      - 20.0
+      - 38.0
+      - 60.0
+    slPoints:
+      - 20.0
+      - 34.0
+      - 50.0
+    beTrigger:
+      - 10.0
+      - 24.0
+      - 40.0
+    tlLength:
+      - 18
+      - 24
+      - 36
+    tlMult:
+      - 0.5
+      - 1.0
+      - 1.5
+    shortMaLen:
+      - 3
+      - 5
+    longMaLen:
+      - 18
+      - 30
+    slCooldownMins:
+      - 0
+      - 120
+      - 240
+    tpCooldownMins:
+      - 0
+      - 120
+      - 240
+
+pine_script:
+  path: strategies/luxalgo_tl_ma_fvg_tp_sl.pine
+  output_dir: reports/pine
+  version_dir: reports/strategy_versions
+  generate_versions: true
+
+reporting:
+  output_dir: reports
+  formats:
+    - csv
+    - json
+    - plot
+
+data:
+  source: csv
+  path: "c:\\Users\\Hp\\OneDrive\\Desktop\\ETH 5m data\\ETHUSDT-5m-all-with-datetime.csv"
+  timestamp_col: open_time
+  timeframe: 5m
+  train_pct: 0.6
+  validation_pct: 0.2
+  test_pct: 0.2
+  gap_fill_method: ffill

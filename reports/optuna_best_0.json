@@ -1,0 +1,284 @@
+{
+  "metrics": {
+    "net_profit": -95109.39380749014,
+    "return_pct": -95.10939380749014,
+    "sharpe_ratio": 0.15026099092721668,
+    "sortino_ratio": 0.1480268366722815,
+    "drawdown": -1.1134414323937454,
+    "equity_stability": 0.6011088071468125,
+    "win_rate": 0.5,
+    "profit_factor": 0.8491871137994887,
+    "recovery_factor": -85419.30544385983,
+    "trade_count": 22.0
+  },
+  "trades": [
+    {
+      "entry_index": "1970-01-21 03:00:00+00:00",
+      "exit_index": "1970-01-21 03:05:00+00:00",
+      "direction": -1,
+      "entry_price": 2664.157255,
+      "exit_price": 2777.398005,
+      "size": 375.35321840451945,
+      "pnl": -44037.15892701684,
+      "return_pct": -0.4403715892701684,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 03:10:00+00:00",
+      "exit_index": "1970-01-21 03:20:00+00:00",
+      "direction": -1,
+      "entry_price": 2703.2477,
+      "exit_price": 2811.815205,
+      "size": 207.02076643950593,
+      "pnl": -23332.02750769128,
+      "return_pct": -0.41691999656098844,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 03:25:00+00:00",
+      "exit_index": "1970-01-21 03:35:00+00:00",
+      "direction": -1,
+      "entry_price": 2295.1418550000003,
+      "exit_price": 2190.664785,
+      "size": 142.17340638098324,
+      "pnl": 14375.53912282306,
+      "return_pct": 0.4405510482923956,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 03:40:00+00:00",
+      "exit_index": "1970-01-21 03:45:00+00:00",
+      "direction": -1,
+      "entry_price": 2181.798555,
+      "exit_price": 1889.70438,
+      "size": 215.44772124076755,
+      "pnl": 62273.127369423826,
+      "return_pct": 1.324781094644872,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 03:50:00+00:00",
+      "exit_index": "1970-01-21 03:55:00+00:00",
+      "direction": -1,
+      "entry_price": 1924.7571400000002,
+      "exit_price": 2050.0144949999994,
+      "size": 567.75723953173,
+      "pnl": -72808.299134288,
+      "return_pct": -0.6662577374631756,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 04:00:00+00:00",
+      "exit_index": "1970-01-21 04:10:00+00:00",
+      "direction": -1,
+      "entry_price": 1999.369815,
+      "exit_price": 1835.9275049999999,
+      "size": 182.41338170472864,
+      "pnl": 29289.3573152444,
+      "return_pct": 0.8030822302376319,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 04:15:00+00:00",
+      "exit_index": "1970-01-21 04:25:00+00:00",
+      "direction": -1,
+      "entry_price": 1861.2289200000002,
+      "exit_price": 1456.0576649999998,
+      "size": 353.31784033580976,
+      "pnl": 142275.19038375944,
+      "return_pct": 2.163534456907377,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 04:30:00+00:00",
+      "exit_index": "1970-01-21 04:35:00+00:00",
+      "direction": -1,
+      "entry_price": 1650.87415,
+      "exit_price": 1579.5693899999999,
+      "size": 1260.1549828753125,
+      "pnl": 86801.90397385726,
+      "return_pct": 0.4172451748971913,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 04:40:00+00:00",
+      "exit_index": "1970-01-21 04:45:00+00:00",
+      "direction": -1,
+      "entry_price": 1619.959615,
+      "exit_price": 1796.6979,
+      "size": 1820.030757964987,
+      "pnl": -326332.93113503087,
+      "return_pct": -1.1068225187592093,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 04:50:00+00:00",
+      "exit_index": "1970-01-21 05:10:00+00:00",
+      "direction": -1,
+      "entry_price": 1807.83563,
+      "exit_price": 2462.460615,
+      "size": -174.2154984461669,
+      "pnl": 113487.8542154629,
+      "return_pct": 113487.8542154629,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 05:15:00+00:00",
+      "exit_index": "1970-01-21 05:20:00+00:00",
+      "direction": 1,
+      "entry_price": 2671.2449549999997,
+      "exit_price": 2451.3037350000004,
+      "size": 306.9451025937226,
+      "pnl": -68689.13626238333,
+      "return_pct": -0.8377484479610343,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 05:25:00+00:00",
+      "exit_index": "1970-01-21 05:55:00+00:00",
+      "direction": 1,
+      "entry_price": 2546.25249,
+      "exit_price": 2814.9918000000002,
+      "size": 52.24705509923942,
+      "pnl": 13830.755617536519,
+      "return_pct": 1.039639147422102,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 06:00:00+00:00",
+      "exit_index": "1970-01-21 06:10:00+00:00",
+      "direction": 1,
+      "entry_price": 2540.32953,
+      "exit_price": 2443.91743,
+      "size": 106.81360316154367,
+      "pnl": -10697.412822004495,
+      "return_pct": -0.3942413141180154,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 06:20:00+00:00",
+      "exit_index": "1970-01-21 06:30:00+00:00",
+      "direction": -1,
+      "entry_price": 2423.02788,
+      "exit_price": 2526.1924649999996,
+      "size": 67.83562973155958,
+      "pnl": -7250.034698557465,
+      "return_pct": -0.4410865477071999,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 06:45:00+00:00",
+      "exit_index": "1970-01-21 06:50:00+00:00",
+      "direction": 1,
+      "entry_price": 3057.057765,
+      "exit_price": 3586.206,
+      "size": 30.050879693256668,
+      "pnl": 15751.64300975467,
+      "return_pct": 1.7146087103010632,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 06:55:00+00:00",
+      "exit_index": "1970-01-21 07:10:00+00:00",
+      "direction": 1,
+      "entry_price": 3719.969055,
+      "exit_price": 3515.1015700000003,
+      "size": 67.03918810122947,
+      "pnl": -14097.924808157082,
+      "return_pct": -0.5653105841998726,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 07:15:00+00:00",
+      "exit_index": "1970-01-21 07:20:00+00:00",
+      "direction": 1,
+      "entry_price": 3636.6774299999997,
+      "exit_price": 4019.2693600000002,
+      "size": 29.808653424432805,
+      "pnl": 11233.390145980615,
+      "return_pct": 1.0362479960382422,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 07:25:00+00:00",
+      "exit_index": "1970-01-21 07:40:00+00:00",
+      "direction": 1,
+      "entry_price": 4293.085469999999,
+      "exit_price": 4849.1242250000005,
+      "size": 51.41718238074891,
+      "pnl": 28237.396079161485,
+      "return_pct": 1.2792247011302842,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 07:45:00+00:00",
+      "exit_index": "1970-01-21 07:50:00+00:00",
+      "direction": 1,
+      "entry_price": 4440.769275,
+      "exit_price": 4330.45369,
+      "size": 113.29395611951671,
+      "pnl": -13243.383958572149,
+      "return_pct": -0.26322917266119256,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 07:55:00+00:00",
+      "exit_index": "1970-01-21 08:10:00+00:00",
+      "direction": 1,
+      "entry_price": 4379.718765,
+      "exit_price": 4610.743475,
+      "size": 84.63522424208132,
+      "pnl": 18982.145795520086,
+      "return_pct": 0.5120919295373995,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 08:15:00+00:00",
+      "exit_index": "1970-01-21 08:25:00+00:00",
+      "direction": 1,
+      "entry_price": 4523.590665,
+      "exit_price": 4185.915995,
+      "size": 123.90598072565159,
+      "pnl": -42649.281125818605,
+      "return_pct": -0.7609150020098014,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 08:30:00+00:00",
+      "exit_index": "1970-01-21 08:35:00+00:00",
+      "direction": -1,
+      "entry_price": 3956.011005,
+      "exit_price": 4206.3721350000005,
+      "size": 33.874305789511155,
+      "pnl": -8688.180772269212,
+      "return_pct": -0.6483372190593811,
+      "exit_reason": "stop_loss"
+    }
+  ],
+  "dataset_metrics": {
+    "validation": {
+      "net_profit": -163605.3632567171,
+      "return_pct": -163.6053632567171,
+      "sharpe_ratio": 1.5437347774392738,
+      "sortino_ratio": 1.4324501583067804,
+      "drawdown": -1.1868235277221568,
+      "equity_stability": 0.6856936839831504,
+      "win_rate": 0.42857142857142855,
+      "profit_factor": 0.6587942823789802,
+      "recovery_factor": -137851.46606481684,
+      "trade_count": 7.0
+    },
+    "test": {
+      "net_profit": -99526.93241055727,
+      "return_pct": -99.52693241055727,
+      "sharpe_ratio": -4.910340575964865,
+      "sortino_ratio": -3.485720158750188,
+      "drawdown": -0.9969313052726689,
+      "equity_stability": 0.7790182255782055,
+      "win_rate": 0.16666666666666666,
+      "profit_factor": 0.3262620845002061,
+      "recovery_factor": -99833.2903021195,
+      "trade_count": 6.0
+    }
+  }
+}

@@ -1,0 +1,9 @@
+//@version=6
+strategy("Example ETH Futures Strategy", overlay=true, margin_long=100, margin_short=100)
+
+length = input.int(title="Momentum Window", defval=12, minval=2, maxval=50, step=1, group="Strategy Inputs", tooltip="Number of bars for momentum calculation")
+threshold = input.float(title="Momentum Threshold", defval=0.01, minval=0.0001, maxval=0.05, step=0.0001, group="Strategy Inputs", tooltip="Threshold for long/short signal generation")
+use_trend = input.bool(title="Use Trend Filter", defval=true, group="Filters", tooltip="Enable trend direction filter")
+trend_source = input.string(title="Trend Source", defval="close", options=["open", "high", "low", "close"], group="Filters", tooltip="Source for trend calculation")
+stop_loss_pct = input.float(title="Stop Loss %", defval=0.03, minval=0.001, maxval=0.1, step=0.001, group="Risk", tooltip="Percentage stop loss")
+take_profit_pct = input.float(title="Take Profit %", defval=0.06, minval=0.001, maxval=0.2, step=0.001, group="Risk", tooltip="Percentage take profit")

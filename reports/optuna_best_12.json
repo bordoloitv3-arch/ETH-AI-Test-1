@@ -1,0 +1,152 @@
+{
+  "metrics": {
+    "net_profit": 161713.906515321,
+    "return_pct": 161.71390651532099,
+    "sharpe_ratio": 0.0435019192447538,
+    "sortino_ratio": 0.03714110905971522,
+    "drawdown": -1.1869910605176899,
+    "equity_stability": 0.4617940748630513,
+    "win_rate": 0.7,
+    "profit_factor": 1.0987694447530776,
+    "recovery_factor": 136238.52099171808,
+    "trade_count": 10.0
+  },
+  "trades": [
+    {
+      "entry_index": "1970-01-21 03:00:00+00:00",
+      "exit_index": "1970-01-21 03:35:00+00:00",
+      "direction": -1,
+      "entry_price": 2664.157255,
+      "exit_price": 2190.664785,
+      "size": 375.35321840451945,
+      "pnl": 176360.21769668403,
+      "return_pct": 1.7636021769668404,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 03:40:00+00:00",
+      "exit_index": "1970-01-21 04:25:00+00:00",
+      "direction": -1,
+      "entry_price": 2181.798555,
+      "exit_price": 1456.0576649999998,
+      "size": 1266.6623921963503,
+      "pnl": 915812.7400955397,
+      "return_pct": 3.3138370917795386,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 04:30:00+00:00",
+      "exit_index": "1970-01-21 04:45:00+00:00",
+      "direction": -1,
+      "entry_price": 1650.87415,
+      "exit_price": 1796.6979,
+      "size": 7221.464808763427,
+      "pnl": -1071733.4690829779,
+      "return_pct": -0.8989748191132545,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 04:50:00+00:00",
+      "exit_index": "1970-01-21 05:10:00+00:00",
+      "direction": -1,
+      "entry_price": 1807.83563,
+      "exit_price": 2462.460615,
+      "size": 666.2081812672639,
+      "pnl": -438250.20039010025,
+      "return_pct": -3.6387583930058396,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 05:15:00+00:00",
+      "exit_index": "1970-01-21 05:20:00+00:00",
+      "direction": 1,
+      "entry_price": 2671.2449549999997,
+      "exit_price": 2451.3037350000004,
+      "size": -1189.7475410706184,
+      "pnl": 257103.62089411452,
+      "return_pct": 257103.62089411452,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 05:25:00+00:00",
+      "exit_index": "1970-01-21 06:10:00+00:00",
+      "direction": 1,
+      "entry_price": 2546.25249,
+      "exit_price": 2443.91743,
+      "size": -238.41740371450734,
+      "pnl": 23506.15179685283,
+      "return_pct": 23506.15179685283,
+      "exit_reason": "signal_flip"
+    },
+    {
+      "entry_index": "1970-01-21 06:20:00+00:00",
+      "exit_index": "1970-01-21 06:40:00+00:00",
+      "direction": -1,
+      "entry_price": 2423.02788,
+      "exit_price": 2954.286405,
+      "size": -153.53079218340284,
+      "pnl": 80945.3547059397,
+      "return_pct": 80945.3547059397,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": "1970-01-21 06:45:00+00:00",
+      "exit_index": "1970-01-21 06:50:00+00:00",
+      "direction": 1,
+      "entry_price": 3057.057765,
+      "exit_price": 3586.206,
+      "size": 143.09319312470558,
+      "pnl": 75004.55621377447,
+      "return_pct": 1.7146087103010632,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 06:55:00+00:00",
+      "exit_index": "1970-01-21 07:30:00+00:00",
+      "direction": 1,
+      "entry_price": 3719.969055,
+      "exit_price": 4426.9854000000005,
+      "size": 319.22032192772383,
+      "pnl": 223743.4801911711,
+      "return_pct": 1.8841719347548458,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": "1970-01-21 07:35:00+00:00",
+      "exit_index": "1970-01-21 08:35:00+00:00",
+      "direction": 1,
+      "entry_price": 4302.520184999999,
+      "exit_price": 4202.167865,
+      "size": 796.0275312944249,
+      "pnl": -84960.68392392041,
+      "return_pct": -0.2480658577956191,
+      "exit_reason": "signal_flip"
+    }
+  ],
+  "dataset_metrics": {
+    "validation": {
+      "net_profit": -162594.78893403668,
+      "return_pct": -162.59478893403667,
+      "sharpe_ratio": 2.851172696149686,
+      "sortino_ratio": 2.879439125370182,
+      "drawdown": -1.260574787062407,
+      "equity_stability": 0.661994173069688,
+      "win_rate": 0.3333333333333333,
+      "profit_factor": 0.5671081504495447,
+      "recovery_factor": -128984.64303965737,
+      "trade_count": 3.0
+    },
+    "test": {
+      "net_profit": -23096.914357349568,
+      "return_pct": -23.09691435734956,
+      "sharpe_ratio": 2.7925418815721033,
+      "sortino_ratio": 3.9086242434651406,
+      "drawdown": -0.8629362537096726,
+      "equity_stability": 0.6445680293032726,
+      "win_rate": 1.0,
+      "profit_factor": 606.3377377987204,
+      "recovery_factor": -26765.493114999343,
+      "trade_count": 1.0
+    }
+  }
+}

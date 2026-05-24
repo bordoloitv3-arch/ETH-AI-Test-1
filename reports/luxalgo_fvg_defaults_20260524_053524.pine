@@ -1,0 +1,140 @@
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/ 
+// © LuxAlgo
+
+//@version=6
+strategy("TL+MA+FVG+TP/SL", overlay = true, max_lines_count = 500, max_boxes_count = 500)
+
+// --- Settings ---
+maxDist = input.float(37.0, "Max Distance from FVG Mid", group = "Trade Frequency", defval=37.0)
+tpPoints = input.float(38.0, "Take Profit (Points/Dollars, defval=38.0)", group = "Trade Management")
+slPoints = input.float(34.0, "Stop Loss (Points/Dollars, defval=34.0)", group = "Trade Management")
+beTrigger = input.float(24.0, "Move SL to BE at Profit", group = "Trade Management", defval=24.0)
+slCooldownMins = input.int(205, "SL Cooldown (Minutes, defval=205)", minval = 0, group = "Trade Management", tooltip = "Minutes to wait before next entry if Stop Loss is hit.")
+tpCooldownMins = input.int(206, "TP Cooldown (Minutes, defval=206)", minval = 0, group = "Trade Management", tooltip = "Minutes to wait before next entry if Take Profit is hit.")
+
+// Trendlines & MAs (Standard Settings)
+tlLength = input.int(24, 'Swing Detection Lookback', group = 'Trendlines', defval=24)
+tlMult = input.float(1.0, 'Slope', group = 'Trendlines', defval=1.0)
+shortMaLen = input.int(3, "Short MA Length", group = 'Moving Averages', defval=3)
+longMaLen = input.int(18, "Long MA Length", group = 'Moving Averages', defval=18)
+
+// --- State Variables ---
+var float fvgMid = na
+var bool fvgIsNew = true
+var float entryPrice = na
+var float currentSL = na
+var bool beActivated = false
+var int cooldownEnd = 0
+
+// Visual Objects
+var line lineTP = na
+var line lineSL = na
+
+// --- Logic (FVG, Trendline, MA) ---
+n = bar_index
+if timeframe.change('D')
+    fvgIsNew := true
+
+if fvgIsNew
+    if low > high[2] and close[1] > high[2]
+        fvgMid := math.avg(low, high[2]), fvgIsNew := false
+    else if high < low[2] and close[1] < low[2]
+        fvgMid := math.avg(low[2], high), fvgIsNew := false
+
+// Trendline & MA Logic
+ph = ta.pivothigh(tlLength, tlLength)
+pl = ta.pivotlow(tlLength, tlLength)
+slope = ta.atr(tlLength) / tlLength * tlMult
+var float upper = 0., var float lower = 0.
+var float s_ph = 0., var float s_pl = 0.
+s_ph := not na(ph) ? slope : s_ph
+s_pl := not na(pl) ? slope : s_pl
+upper := not na(ph) ? ph : upper - s_ph
+lower := not na(pl) ? pl : lower + s_pl
+var int upos = 0, var int dnos = 0
+upos := not na(ph) ? 0 : (close > upper - s_ph * tlLength ? 1 : upos)
+dnos := not na(pl) ? 0 : (close < lower + s_pl * tlLength ? 1 : dnos)
+longTrigger = upos > upos[1], shortTrigger = dnos > dnos[1]
+
+shortMA = ta.sma(close, shortMaLen), longMA = ta.sma(close, longMaLen)
+var bool bullSeq = false, var bool bearSeq = false
+if ta.crossover(shortMA, longMA)
+    bullSeq := true
+if shortTrigger
+    bullSeq := false
+if ta.crossunder(shortMA, longMA)
+    bearSeq := true
+if longTrigger
+    bearSeq := false
+
+// --- Cooldown Detection ---
+if strategy.closedtrades > strategy.closedtrades[1]
+    string lastExitComment = strategy.closedtrades.exit_comment(strategy.closedtrades - 1)
+    if lastExitComment == "SL"
+        cooldownEnd := time + (slCooldownMins * 60 * 1000)
+    else if lastExitComment == "TP"
+        cooldownEnd := time + (tpCooldownMins * 60 * 1000)
+
+// --- Execution & Proximity ---
+distCheck = math.abs(close - fvgMid) <= maxDist
+isFlat = strategy.position_size == 0
+inCooldown = time < cooldownEnd
+
+canLong = isFlat and not inCooldown and close > fvgMid and distCheck and (shortMA > longMA) and bullSeq and longTrigger
+canShort = isFlat and not inCooldown and close < fvgMid and distCheck and (shortMA < longMA) and bearSeq and shortTrigger
+
+// --- Trade Management ---
+if canLong
+    entryPrice := close
+    currentSL := entryPrice - slPoints
+    beActivated := false
+    strategy.entry("Long", strategy.long)
+    lineTP := line.new(n, entryPrice + tpPoints, n, entryPrice + tpPoints, color=color.green, style=line.style_dotted, width=2)
+    lineSL := line.new(n, currentSL, n, currentSL, color=color.red, style=line.style_dotted, width=2)
+    bullSeq := false
+
+if canShort
+    entryPrice := close
+    currentSL := entryPrice + slPoints
+    beActivated := false
+    strategy.entry("Short", strategy.short)
+    lineTP := line.new(n, entryPrice - tpPoints, n, entryPrice - tpPoints, color=color.green, style=line.style_dotted, width=2)
+    lineSL := line.new(n, currentSL, n, currentSL, color=color.red, style=line.style_dotted, width=2)
+    bearSeq := false
+
+// --- Breakeven (BE) Logic ---
+if not isFlat
+    if strategy.position_size > 0 // Long
+        if not beActivated and high >= entryPrice + beTrigger
+            beActivated := true
+            currentSL := entryPrice
+            line.set_y1(lineSL, currentSL), line.set_y2(lineSL, currentSL), line.set_color(lineSL, color.orange)
+            
+    if strategy.position_size < 0 // Short
+        if not beActivated and low <= entryPrice - beTrigger
+            beActivated := true
+            currentSL := entryPrice
+            line.set_y1(lineSL, currentSL), line.set_y2(lineSL, currentSL), line.set_color(lineSL, color.orange)
+
+    // Update Dotted Lines
+    line.set_x2(lineTP, n)
+    line.set_x2(lineSL, n)
+    
+    // Execute Exit based on currentSL or TP
+    strategy.exit("Exit Long", "Long", stop=currentSL, limit=entryPrice + tpPoints, comment_loss = "SL", comment_profit = "TP")
+    strategy.exit("Exit Short", "Short", stop=currentSL, limit=entryPrice - tpPoints, comment_loss = "SL", comment_profit = "TP")
+
+// --- Visuals ---
+plot(shortMA, "Short MA", color = color.rgb(52, 248, 13))
+plot(longMA, "Long MA", color = color.rgb(243, 137, 88))
+plot(fvgMid, "FVG Level", color = color.gray, style = plot.style_linebr)
+
+// Plot Trendlines
+plot(upper > 0 and upos == 0 ? upper : na, "Upper Trendline", color = color.new(#f23645, 0), style = plot.style_linebr)
+plot(lower > 0 and dnos == 0 ? lower : na, "Lower Trendline", color = color.new(#089981, 0), style = plot.style_linebr)
+
+plotshape(canLong, "L", shape.triangleup, location.belowbar, color.teal, size=size.small)
+plotshape(canShort, "S", shape.triangledown, location.abovebar, color.red, size=size.small)
+
+// Cooldown indicator
+bgcolor(inCooldown ? color.new(color.red, 90) : na, title = "Cooldown Active")

@@ -1,0 +1,303 @@
+{
+  "metrics": {
+    "net_profit": -98043.69505772696,
+    "return_pct": -98.04369505772696,
+    "sharpe_ratio": -0.5247317568308468,
+    "sortino_ratio": -0.5489794038943865,
+    "drawdown": -0.9949993874356661,
+    "equity_stability": 0.8747871087979308,
+    "win_rate": 0.2692307692307692,
+    "profit_factor": 0.6329982044405577,
+    "recovery_factor": -98536.43760566255,
+    "trade_count": 26.0
+  },
+  "trades": [
+    {
+      "entry_index": 11,
+      "exit_index": 13,
+      "direction": -1,
+      "entry_price": 971.9308796542872,
+      "exit_price": 997.3982401161945,
+      "size": 1028.8797495102706,
+      "pnl": -27722.503591324537,
+      "return_pct": -0.2772250359132454,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 14,
+      "exit_index": 15,
+      "direction": -1,
+      "entry_price": 1006.2645773152319,
+      "exit_price": 990.6036118057782,
+      "size": 718.2752731047705,
+      "pnl": 10173.158495465917,
+      "return_pct": 0.14075139567569242,
+      "exit_reason": "signal_flip"
+    },
+    {
+      "entry_index": 16,
+      "exit_index": 48,
+      "direction": 1,
+      "entry_price": 998.4354281465961,
+      "exit_price": 1120.5944731163818,
+      "size": 825.7985702409941,
+      "pnl": 99566.34578098364,
+      "return_pct": 1.207587082197725,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": 49,
+      "exit_index": 54,
+      "direction": 1,
+      "entry_price": 1123.7944999549918,
+      "exit_price": 1096.0086316981226,
+      "size": 1619.6644554891025,
+      "pnl": -47700.28535344546,
+      "return_pct": -0.26206500037852604,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 55,
+      "exit_index": 57,
+      "direction": 1,
+      "entry_price": 1083.7177677359894,
+      "exit_price": 1110.4812593764877,
+      "size": 1239.4067840401158,
+      "pnl": 31131.224234031557,
+      "return_pct": 0.2317747583177314,
+      "exit_reason": "signal_flip"
+    },
+    {
+      "entry_index": 59,
+      "exit_index": 66,
+      "direction": -1,
+      "entry_price": 1113.872222215628,
+      "exit_price": 1116.3716407864583,
+      "size": 1485.340385242887,
+      "pnl": -6196.990801873217,
+      "return_pct": -0.03745583546183693,
+      "exit_reason": "signal_flip"
+    },
+    {
+      "entry_index": 67,
+      "exit_index": 71,
+      "direction": 1,
+      "entry_price": 1106.6492809226377,
+      "exit_price": 1069.8203577490597,
+      "size": 1439.037204551987,
+      "pnl": -55347.20623883538,
+      "return_pct": -0.3475471051724334,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 73,
+      "exit_index": 78,
+      "direction": -1,
+      "entry_price": 1061.884238502999,
+      "exit_price": 1091.2683943459845,
+      "size": 978.4846479262352,
+      "pnl": -30332.06548154667,
+      "return_pct": -0.2919246674319533,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 79,
+      "exit_index": 83,
+      "direction": -1,
+      "entry_price": 1083.995501789459,
+      "exit_price": 1066.790816218931,
+      "size": 678.7083241766575,
+      "pnl": 10582.145878391211,
+      "return_pct": 0.14383450675102538,
+      "exit_reason": "signal_flip"
+    },
+    {
+      "entry_index": 85,
+      "exit_index": 90,
+      "direction": -1,
+      "entry_price": 1051.773262550449,
+      "exit_price": 1079.7101826465123,
+      "size": 800.1137309554925,
+      "pnl": -23631.785248321416,
+      "return_pct": -0.280816538427114,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 96,
+      "exit_index": 124,
+      "direction": -1,
+      "entry_price": 977.7704845286804,
+      "exit_price": 950.6938580018284,
+      "size": 618.9800022722039,
+      "pnl": 15864.629701773425,
+      "return_pct": 0.262129801170147,
+      "exit_reason": "signal_flip"
+    },
+    {
+      "entry_index": 125,
+      "exit_index": 129,
+      "direction": 1,
+      "entry_price": 957.9825052168001,
+      "exit_price": 934.483306523435,
+      "size": 797.3701707424406,
+      "pnl": -19869.306915012716,
+      "return_pct": -0.26011485508841287,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 131,
+      "exit_index": 134,
+      "direction": 1,
+      "entry_price": 903.8503858048084,
+      "exit_price": 885.370572440138,
+      "size": 625.2955284182575,
+      "pnl": -12394.438561339488,
+      "return_pct": -0.21930320985264018,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 135,
+      "exit_index": 137,
+      "direction": -1,
+      "entry_price": 868.0025927226967,
+      "exit_price": 890.0053821378765,
+      "size": 508.32707492894485,
+      "pnl": -11854.845872367867,
+      "return_pct": -0.2686777158484334,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 138,
+      "exit_index": 139,
+      "direction": -1,
+      "entry_price": 925.8036098930279,
+      "exit_price": 982.8331568512377,
+      "size": 348.5412638465238,
+      "pnl": -20376.079376587877,
+      "return_pct": -0.6314624819838727,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 140,
+      "exit_index": 141,
+      "direction": 1,
+      "entry_price": 991.5085446980348,
+      "exit_price": 971.5928162700786,
+      "size": 119.93841821719093,
+      "pnl": -2565.2494193181064,
+      "return_pct": -0.2157122554621659,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 142,
+      "exit_index": 146,
+      "direction": 1,
+      "entry_price": 932.4316748153893,
+      "exit_price": 904.4637294589129,
+      "size": 100.02606606558712,
+      "pnl": -2935.326615743278,
+      "return_pct": -0.3147213646028515,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 147,
+      "exit_index": 150,
+      "direction": 1,
+      "entry_price": 903.274402764556,
+      "exit_price": 923.1707993433181,
+      "size": 70.75834979235765,
+      "pnl": 1310.9090023620215,
+      "return_pct": 0.20510448010570057,
+      "exit_reason": "signal_flip"
+    },
+    {
+      "entry_index": 151,
+      "exit_index": 158,
+      "direction": -1,
+      "entry_price": 904.698003635056,
+      "exit_price": 911.8164321813655,
+      "size": 85.13702457995902,
+      "pnl": -722.0313017467965,
+      "return_pct": -0.09374193752054356,
+      "exit_reason": "signal_flip"
+    },
+    {
+      "entry_index": 160,
+      "exit_index": 162,
+      "direction": -1,
+      "entry_price": 873.4382886025868,
+      "exit_price": 900.0968351043355,
+      "size": 79.91747564344516,
+      "pnl": -2236.7860782818816,
+      "return_pct": -0.32044276292613594,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 163,
+      "exit_index": 174,
+      "direction": 1,
+      "entry_price": 885.8739027398667,
+      "exit_price": 853.0545394129697,
+      "size": 53.5461336268306,
+      "pnl": -1827.1846852977906,
+      "return_pct": -0.3851965788017111,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 175,
+      "exit_index": 176,
+      "direction": -1,
+      "entry_price": 856.4322744164805,
+      "exit_price": 885.2384709085416,
+      "size": 34.05205103873855,
+      "pnl": -1025.390669013959,
+      "return_pct": -0.35160339527806306,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 177,
+      "exit_index": 180,
+      "direction": -1,
+      "entry_price": 887.631695425065,
+      "exit_price": 916.462079185506,
+      "size": 21.303169914925256,
+      "pnl": -643.0032511284174,
+      "return_pct": -0.3400447983884219,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 181,
+      "exit_index": 203,
+      "direction": 1,
+      "entry_price": 920.952389685827,
+      "exit_price": 1029.7217072047322,
+      "size": 13.550468469370454,
+      "pnl": 1454.0507965919178,
+      "return_pct": 1.165166768098008,
+      "exit_reason": "take_profit"
+    },
+    {
+      "entry_index": 208,
+      "exit_index": 217,
+      "direction": -1,
+      "entry_price": 933.3330776274418,
+      "exit_price": 964.2118848098482,
+      "size": 28.949841092992795,
+      "pnl": -935.1367799188588,
+      "return_pct": -0.3460925866502764,
+      "exit_reason": "stop_loss"
+    },
+    {
+      "entry_index": 219,
+      "exit_index": 236,
+      "direction": 1,
+      "entry_price": 948.898750471344,
+      "exit_price": 930.0167291154743,
+      "size": 18.619980768425865,
+      "pnl": -377.82190208685364,
+      "return_pct": -0.2138395477439571,
+      "exit_reason": "stop_loss"
+    }
+  ],
+  "dataset_metrics": {}
+}

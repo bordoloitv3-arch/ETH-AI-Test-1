@@ -1,0 +1,79 @@
+[
+  {
+    "id": "length",
+    "name": "Momentum Window",
+    "type": "int",
+    "default": 10,
+    "min_value": 2,
+    "max_value": 50,
+    "step": 1,
+    "category": "Strategy Inputs",
+    "options": null,
+    "description": "Number of bars for momentum calculation"
+  },
+  {
+    "id": "threshold",
+    "name": "Momentum Threshold",
+    "type": "float",
+    "default": 0.005,
+    "min_value": 0.0001,
+    "max_value": 0.05,
+    "step": 0.0001,
+    "category": "Strategy Inputs",
+    "options": null,
+    "description": "Threshold for long/short signal generation"
+  },
+  {
+    "id": "use_trend",
+    "name": "Use Trend Filter",
+    "type": "bool",
+    "default": true,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": "Filters",
+    "options": null,
+    "description": "Enable trend direction filter"
+  },
+  {
+    "id": "trend_source",
+    "name": "Trend Source",
+    "type": "string",
+    "default": "close",
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": "Filters",
+    "options": [
+      "open",
+      "high",
+      "low",
+      "close"
+    ],
+    "description": "Source for trend calculation"
+  },
+  {
+    "id": "stop_loss_pct",
+    "name": "Stop Loss %",
+    "type": "float",
+    "default": 0.02,
+    "min_value": 0.001,
+    "max_value": 0.1,
+    "step": 0.001,
+    "category": "Risk",
+    "options": null,
+    "description": "Percentage stop loss"
+  },
+  {
+    "id": "take_profit_pct",
+    "name": "Take Profit %",
+    "type": "float",
+    "default": 0.04,
+    "min_value": 0.001,
+    "max_value": 0.2,
+    "step": 0.001,
+    "category": "Risk",
+    "options": null,
+    "description": "Percentage take profit"
+  }
+]

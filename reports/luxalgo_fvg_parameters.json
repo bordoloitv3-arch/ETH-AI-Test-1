@@ -1,0 +1,122 @@
+{
+  "maxDist": {
+    "id": "maxDist",
+    "name": "Max Distance from FVG Mid",
+    "type": "float",
+    "default": 37.0,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": "Trade Frequency",
+    "options": null,
+    "description": null
+  },
+  "tpPoints": {
+    "id": "tpPoints",
+    "name": "\"Take Profit (Points/Dollars",
+    "type": "float",
+    "default": 38.0,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": null,
+    "options": null,
+    "description": null
+  },
+  "slPoints": {
+    "id": "slPoints",
+    "name": "\"Stop Loss (Points/Dollars",
+    "type": "float",
+    "default": 34.0,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": null,
+    "options": null,
+    "description": null
+  },
+  "beTrigger": {
+    "id": "beTrigger",
+    "name": "Move SL to BE at Profit",
+    "type": "float",
+    "default": 24.0,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": "Trade Management",
+    "options": null,
+    "description": null
+  },
+  "slCooldownMins": {
+    "id": "slCooldownMins",
+    "name": "\"SL Cooldown (Minutes",
+    "type": "int",
+    "default": 205,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": null,
+    "options": null,
+    "description": null
+  },
+  "tpCooldownMins": {
+    "id": "tpCooldownMins",
+    "name": "\"TP Cooldown (Minutes",
+    "type": "int",
+    "default": 206,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": null,
+    "options": null,
+    "description": null
+  },
+  "tlLength": {
+    "id": "tlLength",
+    "name": "Swing Detection Lookback",
+    "type": "int",
+    "default": 24,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": "Trendlines",
+    "options": null,
+    "description": null
+  },
+  "tlMult": {
+    "id": "tlMult",
+    "name": "Slope",
+    "type": "float",
+    "default": 1.0,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": "Trendlines",
+    "options": null,
+    "description": null
+  },
+  "shortMaLen": {
+    "id": "shortMaLen",
+    "name": "Short MA Length",
+    "type": "int",
+    "default": 3,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": "Moving Averages",
+    "options": null,
+    "description": null
+  },
+  "longMaLen": {
+    "id": "longMaLen",
+    "name": "Long MA Length",
+    "type": "int",
+    "default": 18,
+    "min_value": null,
+    "max_value": null,
+    "step": null,
+    "category": "Moving Averages",
+    "options": null,
+    "description": null
+  }
+}

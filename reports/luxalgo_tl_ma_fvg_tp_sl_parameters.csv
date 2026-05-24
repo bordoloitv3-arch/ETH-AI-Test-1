@@ -1,0 +1,11 @@
+id,name,type,default,min_value,max_value,step,category,options,description
+maxDist,Max Distance from FVG Mid,float,37.0,,,,Trade Frequency,,
+tpPoints,Take Profit (Points/Dollars),float,38.0,,,,Trade Management,,
+slPoints,Stop Loss (Points/Dollars),float,34.0,,,,Trade Management,,
+beTrigger,Move SL to BE at Profit,float,24.0,,,,Trade Management,,
+slCooldownMins,SL Cooldown (Minutes),int,205.0,0.0,,,Trade Management,,Minutes to wait before next entry if Stop Loss is hit.
+tpCooldownMins,TP Cooldown (Minutes),int,206.0,0.0,,,Trade Management,,Minutes to wait before next entry if Take Profit is hit.
+tlLength,Swing Detection Lookback,int,24.0,,,,Trendlines,,
+tlMult,Slope,float,1.0,,,,Trendlines,,
+shortMaLen,Short MA Length,int,3.0,,,,Moving Averages,,
+longMaLen,Long MA Length,int,18.0,,,,Moving Averages,,

@@ -1,0 +1,7 @@
+//@version=6
+indicator("Example ETH Signal Indicator", overlay=false)
+
+show_bands = input.bool(title="Show Bands", defval=true, group="Display")
+band_width = input.int(title="Band Width", defval=20, minval=5, maxval=60, step=1, group="Display")
+mode = input.string(title="Calculation Mode", defval="EMA", options=["SMA", "EMA", "WMA"], group="Settings")
+alert_enabled = input.bool(title="Alert Enabled", defval=false, group="Alerts")

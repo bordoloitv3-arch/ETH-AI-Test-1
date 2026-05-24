@@ -1,0 +1,7 @@
+id,name,type,default,min_value,max_value,step,category,options,description
+length,Momentum Window,int,10,2.0,50.0,1.0,Strategy Inputs,,Number of bars for momentum calculation
+threshold,Momentum Threshold,float,0.005,0.0001,0.05,0.0001,Strategy Inputs,,Threshold for long/short signal generation
+use_trend,Use Trend Filter,bool,True,,,,Filters,,Enable trend direction filter
+trend_source,Trend Source,string,close,,,,Filters,"['open', 'high', 'low', 'close']",Source for trend calculation
+stop_loss_pct,Stop Loss %,float,0.02,0.001,0.1,0.001,Risk,,Percentage stop loss
+take_profit_pct,Take Profit %,float,0.04,0.001,0.2,0.001,Risk,,Percentage take profit

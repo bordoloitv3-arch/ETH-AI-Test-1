@@ -1,0 +1,114 @@
+logging:
+  level: INFO
+  path: logs/optimizer.log
+
+backtest:
+  initial_balance: 100000
+  leverage: 10
+  # Fees and execution parameters
+  # `taker_fee`: fee rate applied to market-like fills (decimal)
+  taker_fee: 0.00075
+  # `maker_fee`: fee rate applied to maker/limit fills
+  maker_fee: 0.00025
+  # `spread`: absolute spread (price points) to charge on entry/exit
+  spread: 0.0
+  # `slippage_pct`: percent slippage applied to fills (decimal)
+  slippage_pct: 0.0005
+  # `funding_rate_per_period`: funding fee applied per backtest bar (as decimal)
+  funding_rate_per_period: 0.0
+  # `maintenance_margin_pct`: percentage of margin used for liquidation threshold
+  maintenance_margin_pct: 0.005
+  # `fill_delay_bars`: simulate delayed fills (integer number of bars)
+  fill_delay_bars: 0
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.04
+  max_trades: 50
+  sample_length: 252
+
+optimizer:
+  engine: optuna
+  trials: 30
+  seed: 42
+  sampler: tpe
+  objective: combined
+  use_validation_in_objective: true
+  # Objective weighting for multi-factor optimization (sum not required; they are used as relative weights)
+  weights:
+    sharpe: 0.35
+    profit: 0.2
+    drawdown: 0.2
+    robustness: 0.25
+  rejection:
+    max_drawdown: 0.30
+    min_robustness_score: 0.60
+    max_probability_of_ruin: 0.15
+    min_oos_sharpe: 1.0
+  # Robustness and OOS settings
+  # `reserve_final_test`: when true, the final portion of loaded market data is treated as
+  # an untouchable out-of-sample test set that optimizers and objective evaluations
+  # must not access during search. Final evaluation is performed only after optimization.
+  reserve_final_test: true
+  # `robustness_threshold`: threshold used to filter out parameter sets that exhibit
+  # excessive overfitting (higher = more tolerant)
+  robustness_threshold: 0.5
+  monte_carlo:
+    enabled: false
+    simulations: 20
+    parallel: true
+    workers: auto
+    chunk_size: 100
+    backend: auto
+  walk_forward:
+    enabled: false
+    windows: 3
+    train_pct: 0.6
+    test_pct: 0.4
+    # When enabled, the workflow will perform walk-forward evaluation using `windows`.
+    # Each window will split into train/test using `train_pct`/`test_pct`.
+  search_space:
+    momentum_window:
+      - 5
+      - 10
+      - 20
+    threshold:
+      - 0.001
+      - 0.005
+      - 0.01
+    stop_loss_pct:
+      - 0.01
+      - 0.03
+      - 0.05
+    take_profit_pct:
+      - 0.02
+      - 0.05
+      - 0.08
+
+pine_script:
+  path: strategies/example_strategy.pine
+  output_dir: reports/pine
+  version_dir: reports/strategy_versions
+  generate_versions: true
+
+reporting:
+  output_dir: reports
+  formats:
+    - csv
+    - json
+    - plot
+
+data:
+  source: csv
+  path: data/ethusdt_1m_sample.parquet
+  timeframe: 1m
+  start: 2024-01-01
+  end: 2024-06-01
+  # Default dataset split fractions; must sum to 1.0
+  train_pct: 0.6
+  validation_pct: 0.2
+  test_pct: 0.2
+  gap_fill_method: ffill
+
+# Notes:
+# - The `reserve_final_test` option causes the `MarketDataEngine.create_split_from_config`
+#   behavior to set aside `test_pct` at the end of the dataset as the final out-of-sample
+#   set. The optimizer will be forbidden from accessing that `test` split during trials.

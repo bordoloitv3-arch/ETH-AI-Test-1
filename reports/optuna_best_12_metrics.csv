@@ -1,0 +1,11 @@
+metric,value
+net_profit,161713.906515321
+return_pct,161.71390651532099
+sharpe_ratio,0.0435019192447538
+sortino_ratio,0.03714110905971522
+drawdown,-1.1869910605176899
+equity_stability,0.4617940748630513
+win_rate,0.7
+profit_factor,1.0987694447530776
+recovery_factor,136238.52099171808
+trade_count,10.0
